@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Videojuegos 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Videojuegos 3D</h1>
+    <nav>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero" style="background: linear-gradient(135deg,#0f172a,#020617); text-align:center; padding:60px;">
+    <h2>Contacto</h2>
+    <p>Si tienes dudas o quieres enviarnos un mensaje, rellena el formulario abajo.</p>
+</section>
+<section style="padding:50px; max-width:600px; margin:auto; background-color:#020617; border-radius:15px;">
+
+    <form id="formContacto">
+        <label for="email" style="color:#38bdf8; font-weight:bold;">Correo electrónico:</label><br>
+        <input type="email" name="email" id="email" placeholder="tuemail@ejemplo.com" required
+            style="width:100%; padding:10px; margin:10px 0; border-radius:5px; border:none;"><br>
+
+        <label for="mensaje" style="color:#38bdf8; font-weight:bold;">Mensaje:</label><br>
+        <textarea name="mensaje" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí" required
+            style="width:100%; padding:10px; margin:10px 0; border-radius:5px; border:none;"></textarea><br>
+
+        <button type="submit" style="padding:10px 20px; background:#38bdf8; color:#020617; font-weight:bold; border:none; border-radius:5px; cursor:pointer;">
+            Enviar
+        </button>
+    </form>
+
+</section>
+<section style="padding:40px; text-align:center;">
+    <h3 style="color:#38bdf8;">¿Necesitas ayuda?</h3>
+    <p>Puedes enviarnos un correo directamente a: <strong>sergi.juegos0@gmail.com</strong></p>
+</section>
+<audio id="sonidoClick" src="media/click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    let audio = document.getElementById("sonidoClick");
+    audio.play();
+
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+document.getElementById("formContacto").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("¡Correo enviado correctamente! Gracias por contactarnos.")
+    this.reset();
+});
+</script>
+
+</body>
+</html>
