@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelado 3D - Creación de Videojuegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Videojuegos 3D</h1>
+    <nav>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Modelado 3D</h2>
+    <p>Aprende a crear personajes, escenarios y objetos en 3D para tus videojuegos.</p>
+</section>
+
+<section class="contenedor">
+    <!-- PERSONAJES -->
+    <div class="card">
+        <h3>Personajes</h3>
+        <p>Modela personajes realistas o estilizados usando herramientas como Blender o ZBrush, y prepara sus animaciones para juegos.</p>
+    </div>
+
+    <!-- ESCENARIOS -->
+    <div class="card">
+        <h3>Escenarios</h3>
+        <p>Crea mundos, ciudades y entornos 3D que harán que tus jugadores se sumerjan en tu juego.</p>
+    </div>
+
+    <!-- OBJETOS -->
+    <div class="card">
+        <h3>Objetos y Props</h3>
+        <p>Modela elementos interactivos o decorativos: armas, vehículos, muebles y más, listos para importar a tu motor de juego.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Creación de Videojuegos 3D</p>
+</footer>
+
+<audio id="sonidoClick" src="click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    const audio = document.getElementById("sonidoClick");
+    if (audio) audio.play().catch(()=>{});
+
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+</script>
+
+</body>
+</html>
