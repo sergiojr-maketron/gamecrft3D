@@ -3,49 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Creación de Videojuegos 3D</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="header">
-    <h1>Videojuegos 3D</h1>
+<header class="header p-3 bg-dark d-flex justify-content-between align-items-center">
+    <h1 class="text-info">Videojuegos 3D</h1>
     <nav>
-        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
-        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
-        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
-        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
-        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
-        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
+        <a href="index.html" class="text-white fw-bold me-3" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" class="text-white fw-bold me-3" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" class="text-white fw-bold me-3" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" class="text-white fw-bold me-3" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" class="text-white fw-bold me-3" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" class="text-white fw-bold" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
     </nav>
 </header>
-
-<section class="hero">
-    <h2>Creación de Videojuegos 3D</h2>
-    <p>Descubre el arte y la tecnología detrás de los videojuegos modernos.</p>
+<section class="text-center py-5 bg-gradient" style="background: linear-gradient(135deg,#0f172a,#020617);">
+    <h2 class="text-info mb-3">Creación de Videojuegos 3D</h2>
+    <p class="text-light">Descubre el arte y la tecnología detrás de los videojuegos modernos.</p>
 </section>
 
-<section class="contenedor">
-    <div class="card">
-        <h3>Motores de juego</h3>
-        <p>Unity, Unreal Engine y más.</p>
-    </div>
+<section class="container py-5">
+ <div class="row g-4">
 
-    <div class="card">
-        <h3>Modelado 3D</h3>
-        <p>Personajes, escenarios y objetos.</p>
-    </div>
+ <div class="col-lg-4 col-md-6 col-sm-12">
+ <div class="card bg-dark text-light h-100 text-center p-3">
+ <h5 class="text-info">Motores de juego</h5>
+ <p>Unity, Unreal Engine y más.</p>
+ </div>
+ </div>
 
-    <div class="card">
-        <h3>Programación</h3>
-        <p>Lógica, físicas e inteligencia artificial.</p>
-    </div>
+ <div class="col-lg-4 col-md-6 col-sm-12">
+ <div class="card bg-dark text-light h-100 text-center p-3">
+ <h5 class="text-info">Modelado 3D</h5>
+ <p>Personajes, escenarios y objetos.</p>
+ </div>
+ </div>
+
+ <div class="col-lg-4 col-md-6 col-sm-12">
+ <div class="card bg-dark text-light h-100 text-center p-3">
+ <h5 class="text-info">Programación</h5>
+ <p>Lógica, físicas e inteligencia artificial.</p>
+ </div>
+ </div>
+
+ </div>
 </section>
+
+<footer class="text-center py-3 bg-dark text-light">
+    <p>© 2026 - Creación de Videojuegos 3D</p>
+</footer>
+
 <audio id="sonidoClick" src="media/click.mp3"></audio>
 
 <script>
 function reproducirSonido(event, destino) {
     event.preventDefault();
-
     document.body.classList.add("fade-out");
 
     const audio = document.getElementById("sonidoClick");
@@ -56,6 +72,8 @@ function reproducirSonido(event, destino) {
     }, 400);
 }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
