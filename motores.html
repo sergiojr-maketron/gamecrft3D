@@ -25,14 +25,14 @@
 </section>
 
 <section class="contenedor">
-    <!-- UNITY -->
+
     <div class="card">
         <h3>Unity</h3>
         <p>Unity es un motor de videojuegos muy popular para crear juegos 2D y 3D.
            Utiliza el lenguaje de programación C# y cuenta con una gran comunidad de desarrolladores.</p>
     </div>
 
-    <!-- UNREAL ENGINE -->
+
     <div class="card">
         <h3>Unreal Engine</h3>
         <p>Unreal Engine es un motor gráfico avanzado usado en videojuegos
@@ -40,7 +40,7 @@
            y utiliza C++ y Blueprints para programación visual.</p>
     </div>
 
-    <!-- GODOT -->
+
     <div class="card">
         <h3>Godot</h3>
         <p>Godot es un motor de código abierto que permite crear juegos 2D y 3D
@@ -57,15 +57,9 @@
 <script>
 function reproducirSonido(event, destino) {
     event.preventDefault();
-
-    // Aplica fade-out
     document.body.classList.add("fade-out");
-
-    // Reproduce sonido si existe
     const audio = document.getElementById("sonidoClick");
     if (audio) audio.play().catch(()=>{});
-
-    // Cambia de página después de 400ms
     setTimeout(() => {
         window.location.href = destino;
     }, 400);
