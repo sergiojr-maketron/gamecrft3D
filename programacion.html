@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Programación de Videojuegos 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<header class="header">
+    <h1>Videojuegos 3D</h1>
+    <nav>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Programación de Videojuegos</h2>
+    <p>La programación da vida a los mundos virtuales.</p>
+</section>
+
+<section class="contenedor">
+
+    <div class="card">
+        <h3>Lógica del juego</h3>
+        <p>
+            La lógica del juego controla las reglas, el movimiento del jugador,
+            las colisiones y los eventos dentro del mundo 3D.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Inteligencia artificial</h3>
+        <p>
+            Los enemigos y personajes no jugables utilizan algoritmos
+            para reaccionar al jugador y al entorno.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Físicas</h3>
+        <p>
+            La programación permite simular gravedad, saltos,
+            impactos y movimientos realistas.
+        </p>
+    </div>
+
+</section>
+
+<!-- VIDEO -->
+<section class="hero">
+    <h2>Ejemplo de programación en un videojuego</h2>
+
+    <!-- VIDEO (pon el archivo en media/) -->
+    <video width="600" controls>
+        <source src="media/programacion.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="contenedor">
+    <div class="card">
+        <h3>Importancia de la programación</h3>
+        <p>
+            La programación conecta el arte, el sonido y el diseño
+            para crear una experiencia interactiva completa.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Creación de Videojuegos 3D</p>
+</footer>
+
+<audio id="sonidoClick" src="media/click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    let audio = document.getElementById("sonidoClick");
+    audio.play();
+
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+</script>
+
+</body>
+</html>
