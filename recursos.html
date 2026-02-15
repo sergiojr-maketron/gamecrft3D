@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursos para Videojuegos 3D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Videojuegos 3D</h1>
+    <nav>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Recursos para aprender desarrollo de videojuegos</h2>
+    <p>Enlaces útiles para seguir aprendiendo sobre videojuegos 3D.</p>
+</section>
+
+<!-- NUEVA ESTRUCTURA: LISTA DE RECURSOS -->
+<section style="padding:50px; max-width:900px; margin:auto;">
+
+    <h2>Motores de videojuegos</h2>
+    <p>
+        Puedes aprender más sobre 
+        <a href="https://es.wikipedia.org/wiki/Unity_(motor_de_videojuego)" target="_blank">Unity</a>,
+        <a href="https://es.wikipedia.org/wiki/Unreal_Engine" target="_blank">Unreal Engine</a>
+        y 
+        <a href="https://es.wikipedia.org/wiki/Godot_(motor_de_juego)" target="_blank">Godot</a>
+        visitando sus páginas de Wikipedia.
+    </p>
+
+    <br>
+
+    <h2>Modelado 3D</h2>
+    <p>
+        Programas como 
+        <a href="https://es.wikipedia.org/wiki/Blender" target="_blank">Blender</a>
+        permiten crear personajes y escenarios en 3D.
+        También puedes investigar sobre 
+        <a href="https://es.wikipedia.org/wiki/Modelado_3D" target="_blank">modelado 3D</a>.
+    </p>
+
+    <br>
+
+    <h2>Programación</h2>
+    <p>
+        Los videojuegos usan lenguajes como 
+        <a href="https://es.wikipedia.org/wiki/C_Sharp" target="_blank">C#</a>,
+        <a href="https://es.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a>
+        y conceptos como la
+        <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial" target="_blank">inteligencia artificial</a>.
+    </p>
+
+    <br>
+
+    <h2>Gráficos 3D</h2>
+    <p>
+        Tecnologías como 
+        <a href="https://es.wikipedia.org/wiki/OpenGL" target="_blank">OpenGL</a>
+        y 
+        <a href="https://es.wikipedia.org/wiki/DirectX" target="_blank">DirectX</a>
+        permiten renderizar gráficos en videojuegos modernos.
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 - Creación de Videojuegos 3D</p>
+</footer>
+
+<audio id="sonidoClick" src="media/click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    let audio = document.getElementById("sonidoClick");
+    audio.play();
+
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+</script>
+
+</body>
+</html>
