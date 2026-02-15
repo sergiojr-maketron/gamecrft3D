@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Motores de Videojuegos 3D</title>
-    <link rel="stylesheet" href="https://gamecraft3d.gamer.gd/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="header">
     <h1>Videojuegos 3D</h1>
     <nav>
-        <a href="https://gamecraft3d.gamer.gd/index.html">Inicio</a>
-        <a href="https://gamecraft3d.gamer.gd/motores.html">Motores</a>
-        <a href="https://gamecraft3d.gamer.gd/modelado.html">Modelado</a>
-        <a href="https://gamecraft3d.gamer.gd/programacion.html">Programación</a>
-        <a href="https://gamecraft3d.gamer.gd/recursos.html">Recursos</a>
-        <a href="https://gamecraft3d.gamer.gd/contacto.html">Contacto</a>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
     </nav>
 </header>
 
@@ -25,28 +25,52 @@
 </section>
 
 <section class="contenedor">
+    <!-- UNITY -->
     <div class="card">
         <h3>Unity</h3>
         <p>Unity es un motor de videojuegos muy popular para crear juegos 2D y 3D.
-           Utiliza el lenguaje de programación C#.</p>
+           Utiliza el lenguaje de programación C# y cuenta con una gran comunidad de desarrolladores.</p>
     </div>
 
+    <!-- UNREAL ENGINE -->
     <div class="card">
         <h3>Unreal Engine</h3>
         <p>Unreal Engine es un motor gráfico avanzado usado en videojuegos
-           profesionales y simulaciones 3D.</p>
+           profesionales y simulaciones 3D. Permite gráficos de alta calidad
+           y utiliza C++ y Blueprints para programación visual.</p>
     </div>
 
+    <!-- GODOT -->
     <div class="card">
         <h3>Godot</h3>
         <p>Godot es un motor de código abierto que permite crear juegos 2D y 3D
-           de forma sencilla.</p>
+           de forma sencilla, con su lenguaje GDScript y soporte para C# y C++.</p>
     </div>
 </section>
 
 <footer>
     <p>© 2026 - Creación de Videojuegos 3D</p>
 </footer>
+
+<audio id="sonidoClick" src="click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    // Aplica fade-out
+    document.body.classList.add("fade-out");
+
+    // Reproduce sonido si existe
+    const audio = document.getElementById("sonidoClick");
+    if (audio) audio.play().catch(()=>{});
+
+    // Cambia de página después de 400ms
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+</script>
 
 </body>
 </html>
