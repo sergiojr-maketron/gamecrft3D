@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Creación de Videojuegos 3D</title>
-    <link rel="stylesheet" href="https://gamecraft3d.gamer.gd/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="header">
     <h1>Videojuegos 3D</h1>
     <nav>
-<a href="https://tuusuario.github.io/gamecraft3d/index.html">Inicio</a>
-<a href="https://tuusuario.github.io/gamecraft3d/motores.html">Motores</a>
-<a href="https://tuusuario.github.io/gamecraft3d/modelado.html">Modelado</a>
+        <a href="index.html" onclick="reproducirSonido(event,'index.html')">Inicio</a>
+        <a href="motores.html" onclick="reproducirSonido(event,'motores.html')">Motores</a>
+        <a href="modelado.html" onclick="reproducirSonido(event,'modelado.html')">Modelado</a>
+        <a href="programacion.html" onclick="reproducirSonido(event,'programacion.html')">Programación</a>
+        <a href="recursos.html" onclick="reproducirSonido(event,'recursos.html')">Recursos</a>
+        <a href="contacto.html" onclick="reproducirSonido(event,'contacto.html')">Contacto</a>
     </nav>
 </header>
 
@@ -41,6 +44,23 @@
 <footer>
     <p>© 2026 - Creación de Videojuegos 3D</p>
 </footer>
+
+<audio id="sonidoClick" src="click.mp3"></audio>
+
+<script>
+function reproducirSonido(event, destino) {
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    const audio = document.getElementById("sonidoClick");
+    if (audio) audio.play().catch(()=>{});
+
+    setTimeout(() => {
+        window.location.href = destino;
+    }, 400);
+}
+</script>
 
 </body>
 </html>
