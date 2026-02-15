@@ -24,24 +24,30 @@
     <p>Aprende a crear personajes, escenarios y objetos en 3D para tus videojuegos.</p>
 </section>
 
-<section class="contenedor">
-    <!-- PERSONAJES -->
-    <div class="card">
-        <h3>Personajes</h3>
-        <p>Modela personajes realistas o estilizados usando herramientas como Blender o ZBrush, y prepara sus animaciones para juegos.</p>
+<!-- Sección principal con dos columnas -->
+<section class="main-content" style="display: flex; gap: 30px; padding: 50px; justify-content: center; flex-wrap: wrap;">
+    
+    <!-- Columna izquierda: cards -->
+    <div class="column-left" style="flex: 1; min-width: 280px;">
+        <div class="card">
+            <h3>Personajes</h3>
+            <p>Modela personajes realistas o estilizados usando herramientas como Blender o ZBrush.</p>
+        </div>
+        <div class="card">
+            <h3>Escenarios</h3>
+            <p>Crea mundos, ciudades y entornos 3D que harán que tus jugadores se sumerjan en tu juego.</p>
+        </div>
+        <div class="card">
+            <h3>Objetos</h3>
+            <p>Modela elementos interactivos o decorativos listos para importar a tu motor de juego.</p>
+        </div>
     </div>
 
-    <!-- ESCENARIOS -->
-    <div class="card">
-        <h3>Escenarios</h3>
-        <p>Crea mundos, ciudades y entornos 3D que harán que tus jugadores se sumerjan en tu juego.</p>
+    <!-- Columna derecha: espacio para imagen -->
+    <div class="column-right" style="flex: 1; min-width: 280px; text-align: center;">
+        <img src="https://via.placeholder.com/400x300.png?text=Ejemplo+Modelado" alt="Modelado 3D" style="border-radius:10px; width:100%; max-width:400px;">
     </div>
 
-    <!-- OBJETOS -->
-    <div class="card">
-        <h3>Objetos y Props</h3>
-        <p>Modela elementos interactivos o decorativos: armas, vehículos, muebles y más, listos para importar a tu motor de juego.</p>
-    </div>
 </section>
 
 <footer>
@@ -53,15 +59,10 @@
 <script>
 function reproducirSonido(event, destino) {
     event.preventDefault();
-
     document.body.classList.add("fade-out");
-
     const audio = document.getElementById("sonidoClick");
     if (audio) audio.play().catch(()=>{});
-
-    setTimeout(() => {
-        window.location.href = destino;
-    }, 400);
+    setTimeout(() => { window.location.href = destino; }, 400);
 }
 </script>
 
